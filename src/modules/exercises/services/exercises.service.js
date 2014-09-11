@@ -11,28 +11,18 @@ function exercisesService() {
       exercises: [
         {
           id: '1',
-          name: 'Set up your dev environment',
+          name: 'Set Up Your Dev Environment',
           url: path + '/set-up-your-dev-environment.html'
         },
         {
           id: '2',
-          name: 'Download the seed project',
-          url: path + '/test.html'
+          name: 'Download and Configure the Seed Project',
+          url: path + '/download-and-configure-the-seed-project.html'
         },
         {
           id: '3',
-          name: 'Install seed project dependencies',
-          url: path + '/test.html'
-        },
-        {
-          id: '4',
-          name: 'Review app structure',
-          url: path + '/test.html'
-        },
-        {
-          id: '5',
-          name: 'Preview the app in your browser',
-          url: path + '/test.html'
+          name: 'Install Package Dependencies and Run App',
+          url: path + '/install-package-dependencies-and-run-app.html'
         }
       ]
     },
@@ -40,12 +30,12 @@ function exercisesService() {
       groupName: 'Some Stuff',
       exercises: [
         {
-          id: '6',
+          id: '5',
           name: 'Foo3',
           url: path + '/test.html'
         },
         {
-          id: '7',
+          id: '6',
           name: 'Foo4',
           url: path + '/test.html'
         }
@@ -67,7 +57,19 @@ function exercisesService() {
     });
 
     return found;
-  }
+  };
+
+  exercises.getNextExercise = function(id) {
+    var nextId = parseInt(id) + 1;
+    var next = exercises.getExerciseById(nextId.toString());
+    return next;
+  };
+
+  exercises.getPreviousExercise = function(id) {
+    var previousId = parseInt(id) - 1;
+    var previous = exercises.getExerciseById(previousId.toString());
+    return previous;
+  };
 
 }
 

@@ -6,6 +6,9 @@ function ViewExerciseCtrl($stateParams, ExercisesService) {
 
   (function init() {
     vm.exercise = ExercisesService.getExerciseById($stateParams.id);
+
+    vm.nextExercise = ExercisesService.getNextExercise($stateParams.id);
+    vm.previousExercise = ExercisesService.getPreviousExercise($stateParams.id);
   })();
 
 }

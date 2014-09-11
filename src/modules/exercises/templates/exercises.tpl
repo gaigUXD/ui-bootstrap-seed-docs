@@ -24,7 +24,8 @@
         <ul class="seed-tiles">
           <li class="seed-tile" ng-repeat="exercise in group.exercises">
             <a ui-sref="viewExercise({ id: exercise.id })" class="seed-tile-inner">
-              {{exercise.name}}
+              <span class="seed-tile-number">{{exercise.id}}</span>
+              <span class="seed-tile-name">{{exercise.name}}</span>
             </a>
           </li>
         </ul>
